@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "sosai"
+version = "0.1.0"
+description = "SOSAI — Distributed knowledge network layer for autonomous AI research"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Daouda Abdoul Anzize" }]
+keywords = ["ai", "research", "distributed", "peer-review", "benchmark", "autonomous"]
+
+dependencies = [
+  "requests>=2.31.0",
+  "PyGithub>=2.3.0",
+  "pyyaml>=6.0.1",
+  "rich>=13.7.0",
+  "typer>=0.12.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+sosai = "sosai.cli:app"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "black>=24.0.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sosai*"]
+
+[project.urls]
+Homepage   = "https://github.com/Tryboy869/sosai"
+Repository = "https://github.com/Tryboy869/sosai"
+Issues     = "https://github.com/Tryboy869/sosai/issues"
