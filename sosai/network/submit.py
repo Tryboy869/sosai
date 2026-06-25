@@ -63,6 +63,7 @@ def submit_paper(
     tier: str = "researcher",
     branch: str = "main",
     require_human_validation: bool = True,
+    domain_path: str = "general",
 ) -> dict:
     """
     Soumet un paper au repo B (Knowledge Repo SOSAI).
@@ -92,7 +93,7 @@ def submit_paper(
 
     owner, repo = _parse_repo_url(repo_url)
     filename = f"{paper_id}.md"
-    path = f"under_review/{filename}"
+    path = f"knowledge/{domain_path}/under_review/{filename}"
     api_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}"
 
     body = {
